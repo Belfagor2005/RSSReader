@@ -1,7 +1,11 @@
 Package: enigma2-plugin-extensions-rssreader
-Version: 1.10
+Version: 1.11
+Section: misc
+Priority: optional
 Architecture: all
 Maintainer: Rico Schulte
-License: GPLv2
 Description: Show current RSS reader (c) 2006 Rico Schulte
-Priority: optional
+Source: edit by lululla
+Homepage: linuxsat-support.com
+OE: 2.0
+License: GPLv2
