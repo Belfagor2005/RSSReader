@@ -12,7 +12,15 @@ and update Lululla 20240521
 
 ![](https://komarev.com/ghpvc/?username=Belfagor2005)
 
-<img src="https://raw.githubusercontent.com/Belfagor2005/RSSReader/screen/screen-1.jpg">
+<img src="https://raw.githubusercontent.com/Belfagor2005/RSSReader/blob/main/screen/screen-1.jpg">
+
+<img src="https://raw.githubusercontent.com/Belfagor2005/RSSReader/blob/main/screen/screen-2.jpg">
+
+<img src="https://raw.githubusercontent.com/Belfagor2005/RSSReader/blob/main/screen/screen-3.jpg">
+
+<img src="https://raw.githubusercontent.com/Belfagor2005/RSSReader/blob/main/screen/screen-4.jpg">
+
+<img src="https://raw.githubusercontent.com/Belfagor2005/RSSReader/blob/main/screen/screen-5.jpg">
 
 
 
