@@ -128,10 +128,10 @@ class RSSFeedScreenList(Screen):
 
                 if (getDesktop(0).size().width() >= 1920):
                     res.append(MultiContentEntryText(pos=(0, 8), size=(8, 15), font=0, flags=HALIGN, text='', color=0x98fb98, color_sel=0x98fb98))
-                    res.append(MultiContentEntryText(pos=(15, 8), size=(990, 90), font=0, flags=HALIGN, text=feedname, color=0xffffff, color_sel=0x00fffc00))
+                    res.append(MultiContentEntryText(pos=(15, 8), size=(925, 90), font=0, flags=HALIGN, text=feedname, color=0xffffff, color_sel=0x00fffc00))
                 else:
                     res.append(MultiContentEntryText(pos=(0, 5), size=(5, 10), font=0, flags=HALIGN, text='', color=0x98fb98, color_sel=0x98fb98))
-                    res.append(MultiContentEntryText(pos=(10, 5), size=(660, 60), font=0, flags=HALIGN, text=feedname, color=0xffffff, color_sel=0x00fffc00))
+                    res.append(MultiContentEntryText(pos=(10, 5), size=(890, 60), font=0, flags=HALIGN, text=feedname, color=0xffffff, color_sel=0x00fffc00))
 
                 feedlist.append((feed.getName(), feed))
                 list.append(res)
@@ -286,10 +286,10 @@ class RSSFeedScreenContent(Screen):
             res = []
             if (getDesktop(0).size().width() >= 1920):
                 res.append(MultiContentEntryText(pos=(0, 8), size=(8, 45), font=0, flags=HALIGN, text='', color=0xffffff, color_sel=0xffffff))
-                res.append(MultiContentEntryText(pos=(8, 8), size=(1335, 45), font=0, flags=HALIGN, text=item['title'], color=0xffffff, color_sel=0x00fffc00))
+                res.append(MultiContentEntryText(pos=(8, 8), size=(1320, 45), font=0, flags=HALIGN, text=item['title'], color=0xffffff, color_sel=0x00fffc00))
             else:
                 res.append(MultiContentEntryText(pos=(0, 5), size=(5, 30), font=0, flags=HALIGN, text='', color=0xffffff, color_sel=0xffffff))
-                res.append(MultiContentEntryText(pos=(5, 5), size=(890, 30), font=0, flags=HALIGN, text=item['title'], color=0xffffff, color_sel=0x00fffc00))
+                res.append(MultiContentEntryText(pos=(5, 5), size=(880, 30), font=0, flags=HALIGN, text=item['title'], color=0xffffff, color_sel=0x00fffc00))
             newlist.append(res)
             res = []
 
