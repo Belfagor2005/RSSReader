@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feeds>
+	<feed>
+		<name>linuxsat-support</name>
+		<url>http://www.linuxsat-support.com/board-feed</url>
+	</feed>
+	<feed>
+	  <name>Ansa.it</name>
+		<url>https://www.ansa.it/sito/ansait_rss.xml</url>
+	  </feed>
+	<feed>
+	  <name>CBC .ca</name>
+		<url>https://www.cbc.ca/webfeed/rss/rss-world</url>
+	</feed>
+	<feed>
+		<name>Corvoboys</name>
+		<url>http://corvoboys.org/app.php/feed</url>
+	</feed>
+	<feed>
+		<name>dublincore</name>
+		<url>https://www.dublincore.org/index.xml</url>
+	</feed>
+	<feed>
+		<name>TV Spielfilm - Jetzt</name>
+		<url>http://www.tvspielfilm.de/tv-programm/rss/jetzt.xml</url>
+	</feed>
+	<feed>
+		<name>TV Spielfilm - 20:15</name>
+		<url>http://www.tvspielfilm.de/tv-programm/rss/heute2015.xml</url>
+	</feed>
+	<feed>
+		<name>TV Spielfilm - 22:00</name>
+		<url>http://www.tvspielfilm.de/tv-programm/rss/heute2200.xml</url>
+	</feed>
+	<feed>
+		<name>TV Spielfilm - Highlights des Tages</name>
+		<url>http://www.tvspielfilm.de/tv-programm/rss/filme.xml</url>
+	</feed>
+	<feed>
+		<name>TV Spielfilm - Tipps des Tages</name>
+		<url>http://www.tvspielfilm.de/tv-programm/rss/tipps.xml</url>
+	</feed>
+	<feed>
+		<name>Slobodna Dalmacija Najnovije</name>
+		<url>https://slobodnadalmacija.hr/feed/</url>
+	</feed>
+	<feed>
+		<name>Slobodna Dalmacija Vijesti</name>
+		<url>https://slobodnadalmacija.hr/rss/feed/category/119</url>
+	</feed>
+	<feed>
+		<name>Slobodna Dalmacija Hrvatska</name>
+		<url>https://slobodnadalmacija.hr/rss/feed/category/142</url>
+	</feed>
+	<feed>
+		<name>Slobodna Dalmacija Split</name>
+		<url>https://slobodnadalmacija.hr/rss/feed/category/253</url>
+	</feed>
+	<feed>
+		<name>Slobodna Dalmacija Dalmacija</name>
+		<url>https://slobodnadalmacija.hr/rss/feed/category/246</url>
+	</feed>
+	<feed>
+		<name>Slobodna Dalmacija Crna kronika</name>
+		<url>https://slobodnadalmacija.hr/rss/feed/category/243</url>
+	</feed>
+	<feed>
+		<name>Euronews</name>
+		<url>https://de.euronews.com/rss</url>
+	</feed>
+	<feed>
+		<name>N1 News-HR</name>
+		<url>https://n1info.hr/feed</url>
+	</feed>
+	<feed>
+		<name>Deutsche Welle</name>
+		<url>https://rss.dw.com/xml/rss-de-all</url>
+	</feed>
+	<feed>
+		<name>Al Jazeera News</name>
+		<url>https://aljazeera.com/xml/rss/all.xml</url>
+	</feed>
+	<feed>
+		<name>HRT Vijesti</name>
+		<url>https://feed.hrt.hr/vijesti/page.xml</url>
+	</feed>
+	<feed>
+		<name>HRT prikazuje</name>
+		<url>https://feed.hrt.hr/hrtprikazuje/page.xml</url>
+	</feed>
+	<feed>
+		<name>HRT Vijesti Hrvatska</name>
+		<url>https://feed.hrt.hr/vijesti/hrvatska.xml</url>
+	</feed>
+	<feed>
+		<name>HRT Vijesti svijet</name>
+		<url>https://feed.hrt.hr/vijesti/svijet.xml</url>
+	</feed>
+	<feed>
+		<name>HRT Vijesti gospodarstvo</name>
+		<url>https://feed.hrt.hr/vijesti/gospodarstvo.xml</url>
+	</feed>
+	<feed>
+		<name>HRT Vijesti EU</name>
+		<url>https://feed.hrt.hr/vijesti/eu.xml</url>
+	</feed>
+	<feed>
+		<name>HRT magazin</name>
+		<url>https://feed.hrt.hr/magazin/page.xml</url>
+	</feed>
+	<feed>
+		<name>HRT magazin zabava</name>
+		<url>https://feed.hrt.hr/magazin/zabava.xml</url>
+	</feed>
+	<feed>
+		<name>HRT magazin znanost i tehnologija</name>
+		<url>https://feed.hrt.hr/magazin/znanost-i-tehnologija.xml</url>
+	</feed>
+	<feed>
+		<name>ARD Tagesschau</name>
+		<url>https://www.tagesschau.de/infoservices/alle-meldungen-100~rss2.xml</url>
+	</feed>
+	<feed>
+		<name>ARD Tagesschau alt</name>
+		<url>http://www.tagesschau.de/xml/rss2</url>
+	</feed>
+	<feed>
+		<name>Kicker EM News</name>
+		<url>https://newsfeed.kicker.de/news/em</url>
+	</feed>
+	<feed>
+		<name>CHIP Hardware-News</name>
+		<url>http://www.chip.de/rss/rss_technik.xml</url>
+	</feed>
+	<feed>
+		<name>zeit.de</name>
+		<url>http://newsfeed.zeit.de/all</url>
+	</feed>
+	<feed>
+		<name>FAZ</name>
+		<url>http://www.faz.net/rss/aktuell/</url>
+	</feed>
+	<feed>
+		<name>Sueddeutsche</name>
+		<url>https://rss.sueddeutsche.de/rss/Topthemen</url>
+	</feed>
+	<feed>
+		<name>Spiegel</name>
+		<url>http://www.spiegel.de/schlagzeilen/index.rss</url>
+	</feed>
+	<feed>
+		<name>Focus</name>
+		<url>http://rss.focus.de/fol/XML/rss_folnews.xml</url>
+	</feed>
+	<feed>
+		<name>Stern</name>
+		<url>http://www.stern.de/feed/standard/alle-nachrichten/</url>
+	</feed>
+	<feed>
+		<name>n-tv.de Topmeldungen</name>
+		<url>https://www.n-tv.de/rss</url>
+	</feed>
+	<feed>
+		<name>n-tv.de Topmeldungen Politik</name>
+		<url>https://www.n-tv.de/politik/rss</url>
+	</feed>
+	<feed>
+		<name>n-tv.de Topmeldungen Wirtschaft und Boerse</name>
+		<url>https://www.n-tv.de/wirtschaft/rss</url>
+	</feed>
+	<feed>
+		<name>welt.de Nachrichten</name>
+		<url>https://www.welt.de/feeds/latest.rss</url>
+	</feed>
+	<feed>
+		<name>welt.de Topnews</name>
+		<url>https://www.welt.de/feeds/topnews.rss</url>
+	</feed>
+	<feed>
+		<name>GoogleNews - Top stories</name>
+		<url>https://news.google.com/rss</url>
+	</feed>
+	<feed>
+		<name>CNN</name>
+		<url>http://rss.cnn.com/rss/edition.rss</url>
+	</feed>
+	<feed>
+		<name>Korben Info</name>
+		<url>https://korben.info/feed</url>
+	</feed>
+	<feed>
+		<name>Klack.de</name>
+		<url>https://www.klack.de/xml/topRSS.xml</url>
+	</feed>
+	<feed>
+		<name>Moviepilot.de</name>
+		<url>https://www.moviepilot.de/rss/moviepilot-standard</url>
+	</feed>
+	<feed>
+		<name>Quotenmeter</name>
+		<url>http://www.quotenmeter.de/xml/all.rss</url>
+	</feed>
+	<feed>
+		<name>KingOfSat News</name>
+		<url>http://de.kingofsat.net/rssnews.php</url>
+	</feed>
+	<feed>
+		<name>Satellifax</name>
+		<url>https://www.satellifax.de/satellifax-rss.xml</url>
+	</feed>
+	<feed>
+		<name>Wissenschaft.de</name>
+		<url>https://www.wissenschaft.de/feed-wissenschaft</url>
+	</feed>
+	<feed>
+		<name>ScineXX</name>
+		<url>https://feeds.feedburner.com/scinexx</url>
+	</feed>
+	<feed>
+		<name>Spektrum.de</name>
+		<url>https://www.spektrum.de/alias/rss/spektrum-de-rss-feed/996406</url>
+	</feed>
+	<feed>
+		<name>Welt der Physik</name>
+		<url>http://www.weltderphysik.de/RSS-alles</url>
+	</feed>
+	<feed>
+		<name>Natur.de</name>
+		<url>https://www.wissenschaft.de/feed-natur</url>
+	</feed>
+	<feed>
+		<name>ARD Alpha</name>
+		<url>https://www.ardalpha.de/wissen/ard-alpha-wissen-rss-feed-100~rss.xml</url>
+	</feed>
+	<feed>
+		<name>Grenzwissenschaft-Aktuell</name>
+		<url>https://www.grenzwissenschaft-aktuell.de/feed</url>
+	</feed>
+	<feed>
+		<name>Heilpraxis.de</name>
+		<url>https://www.heilpraxisnet.de/feed</url>
+	</feed>
+	<feed>
+		<name>Netzpolitik</name>
+		<url>https://netzpolitik.org/feed</url>
+	</feed>
+	<feed>
+		<name>Weltnetz.tv</name>
+		<url>https://weltnetz.tv/rss.xml</url>
+	</feed>
+	<feed>
+		<name>Uebermedien</name>
+		<url>http://uebermedien.de/feed/</url>
+	</feed>
+	<feed>
+		<name>Fefes Blog</name>
+		<url>http://blog.fefe.de/rss.xml</url>
+	</feed>
+	<feed>
+		<name>Hinter den Schlagzeilen</name>
+		<url>http://hinter-den-schlagzeilen.de/feed/</url>
+	</feed>
+	<feed>
+		<name>>b's weblog</name>
+		<url>http://blog.fdik.org/rss.xml</url>
+	</feed>
+	<feed>
+		<name>junge Welt</name>
+		<url>http://www.jungewelt.de/feeds/newsticker.rss</url>
+	</feed>
+	<feed>
+		<name>World Socialist Website</name>
+		<url>http://www.wsws.org/de/rss.xml</url>
+	</feed>
+	<feed>
+		<name>Blauer Bote</name>
+		<url>http://blauerbote.com/feed/</url>
+	</feed>
+	<feed>
+		<name>Postillon</name>
+		<url>http://feeds.feedburner.com/blogspot/rkEL</url>
+	</feed>
+	<feed>
+		<name>Wetter.com</name>
+		<url>http://wetter.com/wetter_rss/wetter.xml</url>
+	</feed>
+</feeds>

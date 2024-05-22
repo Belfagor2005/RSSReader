@@ -1,0 +1,19 @@
+RSS READER
+
+based on the work from Rico Schulte
+(c) 2006 Rico Schulte
+
+This Software is Free, use it where you want, 
+when you want for whatever you want and modify it 
+if you want but don't remove my copyright!
+
+adapted for py3 and added fhd screens by mrvica
+and update Lululla 20240521
+
+![](https://komarev.com/ghpvc/?username=Belfagor2005)
+
+<img src="https://raw.githubusercontent.com/Belfagor2005/RSSReader/screen/screen-1.jpg">
+
+
+
+Enigma2 project
