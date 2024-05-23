@@ -72,6 +72,7 @@ class RSSFeedScreenList(Screen):
                         <convert type="ClockToText">Format:%a %d.%m. %Y | %H:%M</convert>\
                     </widget>\
                     <widget source="session.VideoPicture" render="Pig" position="77,152" zPosition="20" size="739,421" backgroundColor="transparent" transparent="0" />\
+                    <eLabel name="" position="346,652" size="190,52" backgroundColor="#003e4b53" halign="center" valign="center" transparent="0" font="Regular; 17" zPosition="3" text="0 FOR LANGUAGE" />\
                 </screen>'
         
     else:
@@ -291,6 +292,7 @@ class RSSFeedScreenContent(Screen):
                         <convert type="ClockToText">Format:%a %d.%m. %Y | %H:%M</convert>\
                     </widget>\
                     <widget source="session.VideoPicture" render="Pig" position="77,152" zPosition="20" size="739,421" backgroundColor="transparent" transparent="0" />\
+                    <eLabel name="" position="346,652" size="190,52" backgroundColor="#003e4b53" halign="center" valign="center" transparent="0" font="Regular; 17" zPosition="3" text="0 FOR LANGUAGE" />\
                 </screen>'
 
     else:
