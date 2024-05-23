@@ -26,7 +26,7 @@ and update Lululla 20240521
 <img src="https://raw.githubusercontent.com/Belfagor2005/RSSReader/main/screen/screen-5.jpg">
 
 
-<<<<<<<<<<<<<<<<<<<<<<<<<<< FOR ARABIC LANGUAGE USE '0' BUTTON >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<< FOR ARABIC LANGUAGE USE '0' BUTTON >>>>>>>
 
 
 <img src="https://raw.githubusercontent.com/Belfagor2005/RSSReader/main/screen/screen10.jpg">
