@@ -17,6 +17,10 @@
 		<url>http://corvoboys.org/app.php/feed</url>
 	</feed>
 	<feed>
+		<name>MMark Blok - Skin</name>
+		<url>https://e2skin.blogspot.com/feeds/posts/default</url>
+	</feed>
+	<feed>
 		<name>dublincore</name>
 		<url>https://www.dublincore.org/index.xml</url>
 	</feed>
