@@ -6,7 +6,7 @@ from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 import gettext
 import os
 from os import environ as os_environ
-PluginLanguageDomain = 'stvcl'
+PluginLanguageDomain = 'RSSReader'
 PluginLanguagePath = 'Extensions/RSSReader/locale'
 
 
