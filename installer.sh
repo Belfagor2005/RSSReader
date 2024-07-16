@@ -2,7 +2,7 @@
 ## setup command=wget -q "--no-check-certificate" https://raw.githubusercontent.com/Belfagor2005/RSSReader/main/installer.sh -O - | /bin/sh
 
 ## Only This 2 lines to edit with new version ######
-version='1.13'
+version='1.14'
 changelog='\nAdd Live Upgrade\nFix screen'
 ##############################################################
 TMPPATH=/tmp/RSSReader-main
