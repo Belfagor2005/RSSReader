@@ -6,29 +6,48 @@
 # if you want but don't remove my copyright!
 # adapted for py3 and added fhd screens by mrvica
 # up @lululla 20240521
+from . import _, Utils
+from .Console import Console as xConsole
 from Components.ActionMap import ActionMap
 from Components.config import config
 from Components.Label import Label
 from Components.MenuList import MenuList
-from Components.MultiContent import MultiContentEntryText  # , MultiContentEntryPixmapAlphaTest
+from Components.MultiContent import MultiContentEntryText
 from Components.ScrollLabel import ScrollLabel
 from Plugins.Plugin import PluginDescriptor
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
-from enigma import eListboxPythonMultiContent, gFont, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, getDesktop, eTimer
-from six.moves.urllib.request import urlopen, Request
+from enigma import (
+    eListboxPythonMultiContent,
+    gFont,
+    RT_HALIGN_LEFT,
+    RT_HALIGN_RIGHT,
+    getDesktop,
+    eTimer,
+)
+from six.moves.urllib.request import (urlopen, Request)
 from xml.dom.minidom import parse
 import ssl
 import os
+import json
 import sys
+from datetime import datetime
 
 global HALIGN
+
 myname = 'RSS Reader'
-version = '1.12'
-descplugx = 'RSS Reader by Rico Schulte v.%s\n\nModd.by @lululla 20240521\n\n' % version
+currversion = '1.13'
+descplugx = 'RSS Reader by Rico Schulte v.%s\n\nModd.by @lululla 20240521\n\n' % currversion
 HALIGN = RT_HALIGN_LEFT
 ssl._create_default_https_context = ssl._create_unverified_context
+installer_url = 'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0JlbGZhZ29yMjAwNS9SU1NSZWFkZXIvbWFpbi9pbnN0YWxsZXIuc2g='
+developer_url = 'aHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS9yZXBvcy9CZWxmYWdvcjIwMDUvUlNTUmVhZGVy'
+PY3 = False
+PY3 = sys.version_info.major >= 3
 
+if PY3:
+    PY3 = True
+    unidecode = str
 try:
     lng = config.osd.language.value
     lng = lng[:-3]
@@ -48,7 +67,7 @@ def autostart(reason, **kwargs):
 
 
 def Plugins(**kwargs):
-    return [PluginDescriptor(name=myname, description='RSS Simple Reader v.%s' % version, icon='rss.png', where=PluginDescriptor.WHERE_PLUGINMENU, fnc=main), PluginDescriptor(name='RSS Reader', where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main)]
+    return [PluginDescriptor(name=myname, description='RSS Simple Reader v.%s' % currversion, icon='rss.png', where=PluginDescriptor.WHERE_PLUGINMENU, fnc=main), PluginDescriptor(name='RSS Reader', where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main)]
 
 
 class RSSFeedScreenList(Screen):
@@ -59,6 +78,8 @@ class RSSFeedScreenList(Screen):
                     <ePixmap position="188,92" size="500,8" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider_fhd.png" alphatest="blend" />\
                     <ePixmap position="0,0" size="1920,1080" zPosition="-1" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/RSS_FEED+1.png" transparent="1" alphatest="blend" />\
                     <widget name="mylist" itemHeight="55" position="970,120" size="870,875" scrollbarMode="showOnDemand" zPosition="2" transparent="1" />\
+                    <eLabel backgroundColor="yellow" position="1542,1064" size="300,6" zPosition="10" />\
+                    <widget source="key_yellow" render="Label" position="1542,1016" size="300,45" zPosition="11" font="Regular; 30" valign="center" halign="center" backgroundColor="background" transparent="1" foregroundColor="white" />\
                     <widget name="opisi" font="Regular; 34" position="61,742" size="773,281" zPosition="2" transparent="1" />\
                     <widget font="Regular; 40" halign="center" position="69,30" render="Label" size="749,70" source="global.CurrentTime" transparent="1">\
                         <convert type="ClockToText">Format:%a %d.%m. %Y | %H:%M</convert>\
@@ -66,13 +87,15 @@ class RSSFeedScreenList(Screen):
                     <widget source="session.VideoPicture" render="Pig" position="77,152" zPosition="20" size="739,421" backgroundColor="transparent" transparent="0" />\
                     <eLabel name="" position="346,652" size="190,52" backgroundColor="#003e4b53" halign="center" valign="center" transparent="0" font="Regular; 17" zPosition="3" text="0 FOR LANGUAGE" />\
                 </screen>'
-        
+
     else:
         skin = '<screen position="center,center" size="920,600" title="RSS Reader">\
                     <widget name="info" position="15,10" zPosition="4" size="895,55" font="Regular;23" foregroundColor="#ffc000" valign="center" />\
                     <ePixmap position="15,65" size="890,5" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider.png" alphatest="blend" />\
-                    <widget name="opisi" font="Regular; 34" position="61,742" size="773,281" zPosition="2" transparent="1" />\
-                    <widget name="mylist" itemHeight="38" position="12,79" size="890,452" scrollbarMode="showOnDemand" zPosition="2" />\
+                    <widget name="opisi" font="Regular; 34" position="14,416" size="887,139" zPosition="2" transparent="1" />\
+                    <eLabel backgroundColor="yellow" position="389,593" size="250,6" zPosition="10" />\
+                    <widget source="key_yellow" render="Label" position="389,548" size="250,45" zPosition="11" font="Regular; 24" valign="center" halign="center" backgroundColor="background" transparent="1" foregroundColor="white" />\
+                    <widget name="mylist" itemHeight="38" position="12,79" size="890,333" scrollbarMode="showOnDemand" zPosition="2" />\
                     <eLabel name="" position="710,556" size="190,35" backgroundColor="#003e4b53" halign="center" valign="center" transparent="0" font="Regular; 17" zPosition="3" text="0 FOR LANGUAGE" />\
                 </screen>'
 
@@ -90,8 +113,33 @@ class RSSFeedScreenList(Screen):
             self['mylist'].l.setItemHeight(38)
             self['mylist'].l.setFont(0, gFont('Regular', 23))
         self['info'] = Label('RSS Feeds')
+        self['key_yellow'] = Label(_('Update'))
         self['opisi'] = Label(descplugx)
-        self['actions'] = ActionMap(['WizardActions', 'InputActions',  'DirectionActions'], {'ok': self.go, '0': self.arabic, 'back': self.close}, -1)
+        # self['actions'] = ActionMap(['WizardActions', 'InputActions',  'DirectionActions'], {'ok': self.go, '0': self.arabic, 'back': self.close}, -1)
+        self.Update = False
+        self['actions'] = ActionMap(['OkCancelActions',
+                                     'ColorActions',
+                                     'DirectionActions',
+                                     'HotkeyActions',
+                                     'InputActions',
+                                     'InfobarEPGActions',
+                                     'ChannelSelectBaseActions'], {'ok': self.go,
+                                                                   'back': self.close,
+                                                                   'cancel': self.close,
+                                                                   'yellow': self.update_me,  # update_me,
+                                                                   'green': self.go,
+                                                                   '0': self.arabic,
+                                                                   'yellow_long': self.update_dev,
+                                                                   'info_long': self.update_dev,
+                                                                   'infolong': self.update_dev,
+                                                                   'showEventInfoPlugin': self.update_dev,
+                                                                   'red': self.close}, -1)
+        self.timer = eTimer()
+        if os.path.exists('/var/lib/dpkg/status'):
+            self.timer_conn = self.timer.timeout.connect(self.check_vers)
+        else:
+            self.timer.callback.append(self.check_vers)
+        self.timer.start(500, 1)
         self.timer = eTimer()
         if os.path.exists('/var/lib/dpkg/status'):
             self.timer_conn = self.timer.timeout.connect(self.getFeedList)
@@ -99,6 +147,64 @@ class RSSFeedScreenList(Screen):
             self.timer.callback.append(self.getFeedList)
         self.timer.start(200, True)
         self.onClose.append(self.cleanup)
+
+    def check_vers(self):
+        remote_version = '0.0'
+        remote_changelog = ''
+        req = Utils.Request(Utils.b64decoder(installer_url), headers={'User-Agent': 'Mozilla/5.0'})
+        page = Utils.urlopen(req).read()
+        if PY3:
+            data = page.decode("utf-8")
+        else:
+            data = page.encode("utf-8")
+        if data:
+            lines = data.split("\n")
+            for line in lines:
+                if line.startswith("version"):
+                    remote_version = line.split("=")
+                    remote_version = line.split("'")[1]
+                if line.startswith("changelog"):
+                    remote_changelog = line.split("=")
+                    remote_changelog = line.split("'")[1]
+                    break
+        self.new_version = remote_version
+        self.new_changelog = remote_changelog
+        # if float(currversion) < float(remote_version):
+        if currversion < remote_version:
+            self.Update = True
+            # self['key_yellow'].show()
+            self['key_green'].show()
+            self.session.open(MessageBox, _('New version %s is available\n\nChangelog: %s\n\nPress info_long or yellow_long button to start force updating.') % (self.new_version, self.new_changelog), MessageBox.TYPE_INFO, timeout=5)
+        # self.update_me()
+
+    def update_me(self):
+        if self.Update is True:
+            self.session.openWithCallback(self.install_update, MessageBox, _("New version %s is available.\n\nChangelog: %s \n\nDo you want to install it now?") % (self.new_version, self.new_changelog), MessageBox.TYPE_YESNO)
+        else:
+            self.session.open(MessageBox, _("Congrats! You already have the latest version..."),  MessageBox.TYPE_INFO, timeout=4)
+
+    def update_dev(self):
+        try:
+            req = Utils.Request(Utils.b64decoder(developer_url), headers={'User-Agent': 'Mozilla/5.0'})
+            page = Utils.urlopen(req).read()
+            data = json.loads(page)
+            remote_date = data['pushed_at']
+            strp_remote_date = datetime.strptime(remote_date, '%Y-%m-%dT%H:%M:%SZ')
+            remote_date = strp_remote_date.strftime('%Y-%m-%d')
+            self.session.openWithCallback(self.install_update, MessageBox, _("Do you want to install update ( %s ) now?") % (remote_date), MessageBox.TYPE_YESNO)
+        except Exception as e:
+            print('error xcons:', e)
+
+    def install_update(self, answer=False):
+        if answer:
+            cmd1 = 'wget -q "--no-check-certificate" ' + Utils.b64decoder(installer_url) + ' -O - | /bin/sh'
+            self.session.open(xConsole, 'Upgrading...', cmdlist=[cmd1], finishedCallback=self.myCallback, closeOnSuccess=False)
+        else:
+            self.session.open(MessageBox, _("Update Aborted!"),  MessageBox.TYPE_INFO, timeout=3)
+
+    def myCallback(self, result=None):
+        print('result:', result)
+        return
 
     def arabic(self):
         global HALIGN
@@ -551,11 +657,11 @@ class RSS:
         charlist.append(('&#8211;', '-'))
         charlist.append(('&#8212;', ''))
         charlist.append(('&#8212;', '—'))
-        charlist.append(('&#8216;', "'")
         charlist.append(('&#8216;', "'"))
-        charlist.append(('&#8217;', "'")
+        charlist.append(('&#8216;', "'"))
         charlist.append(('&#8217;', "'"))
-        charlist.append(('&#8220;', "'")
+        charlist.append(('&#8217;', "'"))
+        charlist.append(('&#8220;', "'"))
         charlist.append(('&#8220;', ''))
         charlist.append(('&#8221;', '"'))
         charlist.append(('&#8222;', ''))
@@ -565,7 +671,7 @@ class RSS:
         charlist.append(('&#8234;', ''))
         charlist.append(('&#x21;', '!'))
         charlist.append(('&#x26;', '&'))
-        charlist.append(('&#x27;', "'")
+        charlist.append(('&#x27;', "'"))
         charlist.append(('&#x3f;', '?'))
         charlist.append(('&#xB7;', '·'))
         charlist.append(('&#xC4;', 'Ä'))

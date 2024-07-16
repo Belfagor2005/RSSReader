@@ -1,0 +1,129 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: RSSReader\n"
+"Report-Msgid-Bugs-To: Lululla <ekekaz@gmail.com>\n"
+"POT-Creation-Date: 2024-07-16 12:20+0200\n"
+"PO-Revision-Date: 2024-07-16 12:20+0200\n"
+"Last-Translator: Lululla <ekekaz@gmail.com>\n"
+"Language-Team: lululla\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SourceCharset: iso-8859-1\n"
+"X-Poedit-SearchPath-0: plugin.py\n"
+
+#: plugin.py:116
+msgid "Update"
+msgstr ""
+
+#: plugin.py:177
+#, python-format
+msgid ""
+"New version %s is available\n"
+"\n"
+"Changelog: %s\n"
+"\n"
+"Press info_long or yellow_long button to start force updating."
+msgstr ""
+
+#: plugin.py:182
+#, python-format
+msgid ""
+"New version %s is available.\n"
+"\n"
+"Changelog: %s \n"
+"\n"
+"Do you want to install it now?"
+msgstr ""
+
+#: plugin.py:184
+msgid "Congrats! You already have the latest version..."
+msgstr ""
+
+#: plugin.py:194
+#, python-format
+msgid "Do you want to install update ( %s ) now?"
+msgstr ""
+
+#: plugin.py:203
+msgid "Update Aborted!"
+msgstr ""
+
+#, python-format
+#~ msgid "..:: TiVuStream List V. %s  by Lululla ::.."
+#~ msgstr "..:: TiVuStream List V. %s  by Lululla ::.."
+
+#~ msgid "Player"
+#~ msgstr "Player"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#, python-format
+#~ msgid "Converting %s"
+#~ msgstr "Converting %s"
+
+#~ msgid "TiVuStream M3U:"
+#~ msgstr "TiVuStream M3U:"
+
+#, python-format
+#~ msgid "Service Reference used %s"
+#~ msgstr "Service Reference used %s"
+
+#~ msgid "Play"
+#~ msgstr "Play"
+
+#~ msgid "N."
+#~ msgstr "N."
+
+#~ msgid "TiVuStream Config"
+#~ msgstr "TiVuStream Config"
+
+#~ msgid "Server:"
+#~ msgstr "Server:"
+
+#, python-format
+#~ msgid "Update Plugin to Version %s ?"
+#~ msgstr "Update Plugin to Version %s ?"
+
+#~ msgid "Question"
+#~ msgstr "Question"
+
+#~ msgid "Information"
+#~ msgstr "Information"
+
+#~ msgid "Warning"
+#~ msgstr "Warning"
+
+#~ msgid "Error"
+#~ msgstr "Error"
+
+#~ msgid "Message"
+#~ msgstr "Message"
+
+#~ msgid "No"
+#~ msgstr "No"
+
+#~ msgid ""
+#~ "\n"
+#~ "\n"
+#~ "\n"
+#~ "Check Connection wait please..."
+#~ msgstr ""
+#~ "\n"
+#~ "\n"
+#~ "\n"
+#~ "Check Connection wait please..."
+
+#~ msgid ""
+#~ "\n"
+#~ "\n"
+#~ "Server Off !"
+#~ msgstr ""
+#~ "\n"
+#~ "\n"
+#~ "Server Off !"
