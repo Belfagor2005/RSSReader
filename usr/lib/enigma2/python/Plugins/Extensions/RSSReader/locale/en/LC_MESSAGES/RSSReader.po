@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RSSReader\n"
 "Report-Msgid-Bugs-To: Lululla <ekekaz@gmail.com>\n"
-"POT-Creation-Date: 2024-07-16 12:20+0200\n"
-"PO-Revision-Date: 2024-07-16 12:20+0200\n"
+"POT-Creation-Date: 2024-07-16 13:46+0200\n"
+"PO-Revision-Date: 2024-07-16 13:46+0200\n"
 "Last-Translator: Lululla <ekekaz@gmail.com>\n"
 "Language-Team: lululla\n"
 "Language: en\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
-#: plugin.py:177
+#: plugin.py:176
 #, python-format
 msgid ""
 "New version %s is available\n"
@@ -30,7 +30,7 @@ msgid ""
 "Press info_long or yellow_long button to start force updating."
 msgstr ""
 
-#: plugin.py:182
+#: plugin.py:181
 #, python-format
 msgid ""
 "New version %s is available.\n"
@@ -40,90 +40,15 @@ msgid ""
 "Do you want to install it now?"
 msgstr ""
 
-#: plugin.py:184
+#: plugin.py:183
 msgid "Congrats! You already have the latest version..."
 msgstr ""
 
-#: plugin.py:194
+#: plugin.py:193
 #, python-format
 msgid "Do you want to install update ( %s ) now?"
 msgstr ""
 
-#: plugin.py:203
+#: plugin.py:202
 msgid "Update Aborted!"
 msgstr ""
-
-#, python-format
-#~ msgid "..:: TiVuStream List V. %s  by Lululla ::.."
-#~ msgstr "..:: TiVuStream List V. %s  by Lululla ::.."
-
-#~ msgid "Player"
-#~ msgstr "Player"
-
-#~ msgid "OK"
-#~ msgstr "OK"
-
-#, python-format
-#~ msgid "Converting %s"
-#~ msgstr "Converting %s"
-
-#~ msgid "TiVuStream M3U:"
-#~ msgstr "TiVuStream M3U:"
-
-#, python-format
-#~ msgid "Service Reference used %s"
-#~ msgstr "Service Reference used %s"
-
-#~ msgid "Play"
-#~ msgstr "Play"
-
-#~ msgid "N."
-#~ msgstr "N."
-
-#~ msgid "TiVuStream Config"
-#~ msgstr "TiVuStream Config"
-
-#~ msgid "Server:"
-#~ msgstr "Server:"
-
-#, python-format
-#~ msgid "Update Plugin to Version %s ?"
-#~ msgstr "Update Plugin to Version %s ?"
-
-#~ msgid "Question"
-#~ msgstr "Question"
-
-#~ msgid "Information"
-#~ msgstr "Information"
-
-#~ msgid "Warning"
-#~ msgstr "Warning"
-
-#~ msgid "Error"
-#~ msgstr "Error"
-
-#~ msgid "Message"
-#~ msgstr "Message"
-
-#~ msgid "No"
-#~ msgstr "No"
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "\n"
-#~ "Check Connection wait please..."
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "\n"
-#~ "Check Connection wait please..."
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "Server Off !"
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "Server Off !"

@@ -115,7 +115,6 @@ class RSSFeedScreenList(Screen):
         self['info'] = Label('RSS Feeds')
         self['key_yellow'] = Label(_('Update'))
         self['opisi'] = Label(descplugx)
-        # self['actions'] = ActionMap(['WizardActions', 'InputActions',  'DirectionActions'], {'ok': self.go, '0': self.arabic, 'back': self.close}, -1)
         self.Update = False
         self['actions'] = ActionMap(['OkCancelActions',
                                      'ColorActions',
