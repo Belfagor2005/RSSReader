@@ -73,7 +73,7 @@ def Plugins(**kwargs):
 class RSSFeedScreenList(Screen):
     if (getDesktop(0).size().width() >= 1920):
 
-        skin = '<screen position="0,0" size="1920,1080" title="RSS Reader">\
+        skin = '<screen position="center,center" size="1920,1080" title="RSS Reader">\
                     <widget name="info" position="970,45" zPosition="4" size="870,40" font="Regular;35" transparent="1" valign="center" />\
                     <ePixmap position="188,92" size="500,8" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider_fhd.png" alphatest="blend" />\
                     <ePixmap position="0,0" size="1920,1080" zPosition="-1" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/RSS_FEED+1.png" transparent="1" alphatest="blend" />\
@@ -169,11 +169,11 @@ class RSSFeedScreenList(Screen):
                     break
         self.new_version = remote_version
         self.new_changelog = remote_changelog
-        # if float(currversion) < float(remote_version):
-        if currversion < remote_version:
+        if float(currversion) < float(remote_version):
+        # if currversion < remote_version:
             self.Update = True
             # self['key_yellow'].show()
-            self['key_green'].show()
+            # self['key_green'].show()
             self.session.open(MessageBox, _('New version %s is available\n\nChangelog: %s\n\nPress info_long or yellow_long button to start force updating.') % (self.new_version, self.new_changelog), MessageBox.TYPE_INFO, timeout=5)
         # self.update_me()
 
