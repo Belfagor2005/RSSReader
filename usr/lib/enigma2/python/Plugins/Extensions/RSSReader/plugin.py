@@ -8,6 +8,7 @@
 # up @lululla 20240521
 from . import _, Utils
 from .Console import Console as xConsole
+
 from Components.ActionMap import ActionMap
 from Components.config import config
 from Components.Label import Label
