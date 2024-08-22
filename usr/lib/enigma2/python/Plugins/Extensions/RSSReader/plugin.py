@@ -118,7 +118,6 @@ class RSSFeedScreenList(Screen):
         self['opisi'] = Label(descplugx)
         self.Update = False
         self['actions'] = ActionMap(['OkCancelActions',
-                                     'ColorActions',
                                      'DirectionActions',
                                      'HotkeyActions',
                                      'InputActions',
