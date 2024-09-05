@@ -5,6 +5,10 @@
 		<url>http://www.linuxsat-support.com/board-feed</url>
 	</feed>
 	<feed>
+	  <name>Sat-Universe</name>
+		<url>https://www.sat-universe.com/index.php?forums/-/index.rss</url>
+	  </feed>	
+	<feed>
 	  <name>Ansa.it</name>
 		<url>https://www.ansa.it/sito/ansait_rss.xml</url>
 	  </feed>

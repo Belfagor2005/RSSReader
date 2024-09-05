@@ -28,6 +28,8 @@ from enigma import (
 )
 from six.moves.urllib.request import (urlopen, Request)
 from xml.dom.minidom import parse
+import re
+import six
 import ssl
 import os
 import json
@@ -169,7 +171,7 @@ class RSSFeedScreenList(Screen):
         self.new_version = remote_version
         self.new_changelog = remote_changelog
         if float(currversion) < float(remote_version):
-        # if currversion < remote_version:
+            # if currversion < remote_version:
             self.Update = True
             # self['key_yellow'].show()
             # self['key_green'].show()
@@ -606,169 +608,57 @@ class RSS:
         return data
 
     def decodeHtml(self, text):
-        charlist = []
-        charlist.append(('&#034;', '"'))
-        charlist.append(('&#038;', '&'))
-        charlist.append(('&#039;', "'"))
-        charlist.append(('&#060;', ' '))
-        charlist.append(('&#062;', ' '))
-        charlist.append(('&#160;', ' '))
-        charlist.append(('&#174;', ''))
-        charlist.append(('&#192;', '\xc3\x80'))
-        charlist.append(('&#193;', '\xc3\x81'))
-        charlist.append(('&#194;', '\xc3\x82'))
-        charlist.append(('&#196;', '\xc3\x84'))
-        charlist.append(('&#204;', '\xc3\x8c'))
-        charlist.append(('&#205;', '\xc3\x8d'))
-        charlist.append(('&#206;', '\xc3\x8e'))
-        charlist.append(('&#207;', '\xc3\x8f'))
-        charlist.append(('&#210;', '\xc3\x92'))
-        charlist.append(('&#211;', '\xc3\x93'))
-        charlist.append(('&#212;', '\xc3\x94'))
-        charlist.append(('&#214;', '\xc3\x96'))
-        charlist.append(('&#217;', '\xc3\x99'))
-        charlist.append(('&#218;', '\xc3\x9a'))
-        charlist.append(('&#219;', '\xc3\x9b'))
-        charlist.append(('&#220;', '\xc3\x9c'))
-        charlist.append(('&#223;', '\xc3\x9f'))
-        charlist.append(('&#224;', '\xc3\xa0'))
-        charlist.append(('&#225;', '\xc3\xa1'))
-        charlist.append(('&#226;', '\xc3\xa2'))
-        charlist.append(('&#228;', '\xc3\xa4'))
-        charlist.append(('&#232;', '\xc3\xa8'))
-        charlist.append(('&#233;', '\xc3\xa9'))
-        charlist.append(('&#234;', '\xc3\xaa'))
-        charlist.append(('&#235;', '\xc3\xab'))
-        charlist.append(('&#236;', '\xc3\xac'))
-        charlist.append(('&#237;', '\xc3\xad'))
-        charlist.append(('&#238;', '\xc3\xae'))
-        charlist.append(('&#239;', '\xc3\xaf'))
-        charlist.append(('&#242;', '\xc3\xb2'))
-        charlist.append(('&#243;', '\xc3\xb3'))
-        charlist.append(('&#244;', '\xc3\xb4'))
-        charlist.append(('&#246;', '\xc3\xb6'))
-        charlist.append(('&#249;', '\xc3\xb9'))
-        charlist.append(('&#250;', '\xc3\xba'))
-        charlist.append(('&#251;', '\xc3\xbb'))
-        charlist.append(('&#252;', '\xc3\xbc'))
-        charlist.append(('&#8203;', ''))
-        charlist.append(('&#8211;', '-'))
-        charlist.append(('&#8211;', '-'))
-        charlist.append(('&#8212;', ''))
-        charlist.append(('&#8212;', '—'))
-        charlist.append(('&#8216;', "'"))
-        charlist.append(('&#8216;', "'"))
-        charlist.append(('&#8217;', "'"))
-        charlist.append(('&#8217;', "'"))
-        charlist.append(('&#8220;', "'"))
-        charlist.append(('&#8220;', ''))
-        charlist.append(('&#8221;', '"'))
-        charlist.append(('&#8222;', ''))
-        charlist.append(('&#8222;', ', '))
-        charlist.append(('&#8230;', '...'))
-        charlist.append(('&#8230;', '...'))
-        charlist.append(('&#8234;', ''))
-        charlist.append(('&#x21;', '!'))
-        charlist.append(('&#x26;', '&'))
-        charlist.append(('&#x27;', "'"))
-        charlist.append(('&#x3f;', '?'))
-        charlist.append(('&#xB7;', '·'))
-        charlist.append(('&#xC4;', 'Ä'))
-        charlist.append(('&#xD6;', 'Ö'))
-        charlist.append(('&#xDC;', 'Ü'))
-        charlist.append(('&#xDF;', 'ß'))
-        charlist.append(('&#xE4;', 'ä'))
-        charlist.append(('&#xE9;', 'é'))
-        charlist.append(('&#xF6;', 'ö'))
-        charlist.append(('&#xF8;', 'ø'))
-        charlist.append(('&#xFB;', 'û'))
-        charlist.append(('&#xFC;', 'ü'))
-        charlist.append(('&8221;', '\xe2\x80\x9d'))
-        charlist.append(('&8482;', '\xe2\x84\xa2'))
-        charlist.append(('&Aacute;', '\xc3\x81'))
-        charlist.append(('&Acirc;', '\xc3\x82'))
-        charlist.append(('&Agrave;', '\xc3\x80'))
-        charlist.append(('&Auml;', '\xc3\x84'))
-        charlist.append(('&Iacute;', '\xc3\x8d'))
-        charlist.append(('&Icirc;', '\xc3\x8e'))
-        charlist.append(('&Igrave;', '\xc3\x8c'))
-        charlist.append(('&Iuml;', '\xc3\x8f'))
-        charlist.append(('&Oacute;', '\xc3\x93'))
-        charlist.append(('&Ocirc;', '\xc3\x94'))
-        charlist.append(('&Ograve;', '\xc3\x92'))
-        charlist.append(('&Ouml;', '\xc3\x96'))
-        charlist.append(('&Uacute;', '\xc3\x9a'))
-        charlist.append(('&Ucirc;', '\xc3\x9b'))
-        charlist.append(('&Ugrave;', '\xc3\x99'))
-        charlist.append(('&Uuml;', '\xc3\x9c'))
-        charlist.append(('&aacute;', '\xc3\xa1'))
-        charlist.append(('&acirc;', '\xc3\xa2'))
-        charlist.append(('&acute;', '\''))
-        charlist.append(('&agrave;', '\xc3\xa0'))
-        charlist.append(('&amp;', '&'))
-        charlist.append(('&apos;', "'"))
-        charlist.append(('&auml;', '\xc3\xa4'))
-        charlist.append(('&bdquo;', '"'))
-        charlist.append(('&bdquo;', '"'))
-        charlist.append(('&eacute;', '\xc3\xa9'))
-        charlist.append(('&ecirc;', '\xc3\xaa'))
-        charlist.append(('&egrave;', '\xc3\xa8'))
-        charlist.append(('&euml;', '\xc3\xab'))
-        charlist.append(('&gt;', '>'))
-        charlist.append(('&hellip;', '...'))
-        charlist.append(('&iacute;', '\xc3\xad'))
-        charlist.append(('&icirc;', '\xc3\xae'))
-        charlist.append(('&igrave;', '\xc3\xac'))
-        charlist.append(('&iuml;', '\xc3\xaf'))
-        charlist.append(('&laquo;', '"'))
-        charlist.append(('&ldquo;', '"'))
-        charlist.append(('&lsquo;', '\''))
-        charlist.append(('&lt;', '<'))
-        charlist.append(('&mdash;', '—'))
-        charlist.append(('&nbsp;', ' '))
-        charlist.append(('&ndash;', '-'))
-        charlist.append(('&oacute;', '\xc3\xb3'))
-        charlist.append(('&ocirc;', '\xc3\xb4'))
-        charlist.append(('&ograve;', '\xc3\xb2'))
-        charlist.append(('&ouml;', '\xc3\xb6'))
-        charlist.append(('&quot;', '"'))
-        charlist.append(('&raquo;', '"'))
-        charlist.append(('&rsquo;', '\''))
-        charlist.append(('&szlig;', '\xc3\x9f'))
-        charlist.append(('&uacute;', '\xc3\xba'))
-        charlist.append(('&ucirc;', '\xc3\xbb'))
-        charlist.append(('&ugrave;', '\xc3\xb9'))
-        charlist.append(('&uuml;', '\xc3\xbc'))
-        charlist.append(('\u0026', '&'))
-        charlist.append(('\u003d', '='))
-        charlist.append(('\u00a0', ' '))
-        charlist.append(('\u00b4', '\''))
-        charlist.append(('\u00c1', 'Á'))
-        charlist.append(('\u00c4', 'Ä'))
-        charlist.append(('\u00c6', 'Æ'))
-        charlist.append(('\u00d6', 'Ö'))
-        charlist.append(('\u00dc', 'Ü'))
-        charlist.append(('\u00df', 'ß'))
-        charlist.append(('\u00e0', 'à'))
-        charlist.append(('\u00e1', 'á'))
-        charlist.append(('\u00e4', 'ä'))
-        charlist.append(('\u00e7', 'ç'))
-        charlist.append(('\u00e8', 'é'))
-        charlist.append(('\u00e9', 'é'))
-        charlist.append(('\u00f6', 'ö'))
-        charlist.append(('\u00fc', 'ü'))
-        charlist.append(('\u014d', 'ō'))
-        charlist.append(('\u016b', 'ū'))
-        charlist.append(('\u2013', '–'))
-        charlist.append(('\u2018', '\"'))
-        charlist.append(('\u2019s', '’'))
-        charlist.append(('\u201a', '\"'))
-        charlist.append(('\u201c', '\"'))
-        charlist.append(('\u201d', '\''))
-        charlist.append(('\u201e', '\"'))
-        charlist.append(('\u2026', '...'))
+        # List of HTML and Unicode entities to replace
+        if six.PY2:
+            from six.moves import (html_parser)
+            h = html_parser.HTMLParser()
+            text = h.unescape(text.decode('utf8')).encode('utf8')
+        else:
+            import html
+            text = html.unescape(text)
+
+        charlist = [
+            ('&#034;', '"'), ('&#038;', '&'), ('&#039;', "'"), ('&#060;', ' '),
+            ('&#062;', ' '), ('&#160;', ' '), ('&#174;', ''), ('&#192;', 'À'),
+            ('&#193;', 'Á'), ('&#194;', 'Â'), ('&#196;', 'Ä'), ('&#204;', 'Ì'),
+            ('&#205;', 'Í'), ('&#206;', 'Î'), ('&#207;', 'Ï'), ('&#210;', 'Ò'),
+            ('&#211;', 'Ó'), ('&#212;', 'Ô'), ('&#214;', 'Ö'), ('&#217;', 'Ù'),
+            ('&#218;', 'Ú'), ('&#219;', 'Û'), ('&#220;', 'Ü'), ('&#223;', 'ß'),
+            ('&#224;', 'à'), ('&#225;', 'á'), ('&#226;', 'â'), ('&#228;', 'ä'),
+            ('&#232;', 'è'), ('&#233;', 'é'), ('&#234;', 'ê'), ('&#235;', 'ë'),
+            ('&#236;', 'ì'), ('&#237;', 'í'), ('&#238;', 'î'), ('&#239;', 'ï'),
+            ('&#242;', 'ò'), ('&#243;', 'ó'), ('&#244;', 'ô'), ('&#246;', 'ö'),
+            ('&#249;', 'ù'), ('&#250;', 'ú'), ('&#251;', 'û'), ('&#252;', 'ü'),
+            ('&#8203;', ''), ('&#8211;', '-'), ('&#8212;', '—'), ('&#8216;', "'"),
+            ('&#8217;', "'"), ('&#8220;', '"'), ('&#8221;', '"'), ('&#8222;', ','),
+            ('&#8230;', '...'), ('&#x21;', '!'), ('&#x26;', '&'), ('&#x27;', "'"),
+            ('&#x3f;', '?'), ('&#xB7;', '·'), ('&#xC4;', 'Ä'), ('&#xD6;', 'Ö'),
+            ('&#xDC;', 'Ü'), ('&#xDF;', 'ß'), ('&#xE4;', 'ä'), ('&#xE9;', 'é'),
+            ('&#xF6;', 'ö'), ('&#xF8;', 'ø'), ('&#xFB;', 'û'), ('&#xFC;', 'ü'),
+            ('&8221;', '”'), ('&8482;', '™'), ('&Aacute;', 'Á'), ('&Acirc;', 'Â'),
+            ('&Agrave;', 'À'), ('&Auml;', 'Ä'), ('&Iacute;', 'Í'), ('&Icirc;', 'Î'),
+            ('&Igrave;', 'Ì'), ('&Iuml;', 'Ï'), ('&Oacute;', 'Ó'), ('&Ocirc;', 'Ô'),
+            ('&Ograve;', 'Ò'), ('&Ouml;', 'Ö'), ('&Uacute;', 'Ú'), ('&Ucirc;', 'Û'),
+            ('&Ugrave;', 'Ù'), ('&Uuml;', 'Ü'), ('&aacute;', 'á'), ('&acirc;', 'â'),
+            ('&acute;', "'"), ('&agrave;', 'à'), ('&amp;', '&'), ('&apos;', "'"),
+            ('&auml;', 'ä'), ('&bdquo;', '"'), ('&eacute;', 'é'), ('&ecirc;', 'ê'),
+            ('&egrave;', 'è'), ('&euml;', 'ë'), ('&gt;', '>'), ('&hellip;', '...'),
+            ('&iacute;', 'í'), ('&icirc;', 'î'), ('&igrave;', 'ì'), ('&iuml;', 'ï'),
+            ('&laquo;', '"'), ('&ldquo;', '"'), ('&lsquo;', "'"), ('&lt;', '<'),
+            ('&mdash;', '—'), ('&nbsp;', ' '), ('&ndash;', '-'), ('&oacute;', 'ó'),
+            ('&ocirc;', 'ô'), ('&ograve;', 'ò'), ('&ouml;', 'ö'), ('&quot;', '"'),
+            ('&raquo;', '"'), ('&rsquo;', "'"), ('&szlig;', 'ß'), ('&uacute;', 'ú'),
+            ('&ucirc;', 'û'), ('&ugrave;', 'ù'), ('&uuml;', 'ü'), ('&ntilde;', '~'),
+            ('&equals;', '='), ('&quest;', '?'), ('&comma;', ','), ('&period;', '.'),
+            ('&colon;', ':'), ('&lpar;', '('), ('&rpar;', ')'), ('&excl;', '!'),
+            ('&dollar;', '$'), ('&num;', '#'), ('&ast;', '*'), ('&lowbar;', '_'),
+            ('&lsqb;', '['), ('&rsqb;', ']'), ('&half;', '1/2'), ('&DiacriticalTilde;', '~'),
+            ('&OpenCurlyDoubleQuote;', '"'), ('&CloseCurlyDoubleQuote;', '"'),
+        ]
+
+        # Replacing all HTML entities with their respective characters
         for repl in charlist:
             text = text.replace(repl[0], repl[1])
-        from re import sub as re_sub
-        text = re_sub('<[^>]+>', '', text)
-        return str(text).encode('utf-8').decode('unicode_escape')  # str needed for PLi
+        # Remove any remaining HTML tags
+        text = re.sub('<[^>]+>', '', text)
+        return text.strip()
