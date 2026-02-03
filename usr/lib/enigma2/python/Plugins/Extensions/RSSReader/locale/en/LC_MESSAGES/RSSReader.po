@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: RSSReader\n"
-"Report-Msgid-Bugs-To: Lululla <ekekaz@gmail.com>\n"
-"POT-Creation-Date: 2024-07-16 13:46+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
 "PO-Revision-Date: 2024-07-16 13:46+0200\n"
 "Last-Translator: Lululla <ekekaz@gmail.com>\n"
 "Language-Team: lululla\n"
@@ -16,39 +16,14 @@ msgstr ""
 "X-Poedit-SourceCharset: iso-8859-1\n"
 "X-Poedit-SearchPath-0: plugin.py\n"
 
-#: plugin.py:116
-msgid "Update"
-msgstr ""
-
-#: plugin.py:176
-#, python-format
-msgid ""
-"New version %s is available\n"
-"\n"
-"Changelog: %s\n"
-"\n"
-"Press info_long or yellow_long button to start force updating."
-msgstr ""
-
-#: plugin.py:181
-#, python-format
-msgid ""
-"New version %s is available.\n"
-"\n"
-"Changelog: %s \n"
-"\n"
-"Do you want to install it now?"
-msgstr ""
-
-#: plugin.py:183
 msgid "Congrats! You already have the latest version..."
 msgstr ""
 
-#: plugin.py:193
-#, python-format
 msgid "Do you want to install update ( %s ) now?"
 msgstr ""
 
-#: plugin.py:202
+msgid "Update"
+msgstr ""
+
 msgid "Update Aborted!"
 msgstr ""
