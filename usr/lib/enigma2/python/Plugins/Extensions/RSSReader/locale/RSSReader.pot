@@ -4,6 +4,7 @@
 # [lululla] <ekekaz@gmail.com>, 2025.
 #
 
+
 msgid "Congrats! You already have the latest version..."
 msgstr ""
 
