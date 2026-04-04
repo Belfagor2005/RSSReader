@@ -33,14 +33,13 @@ import os
 import json
 import sys
 from datetime import datetime
-from . import _, Utils
+from . import _, __version__, Utils
 from .Console import Console as xConsole
 
 global HALIGN
 
 myname = 'RSS Reader'
-currversion = '1.13'
-descplugx = 'RSS Reader by Rico Schulte v.%s\n\nModd.by @lululla 20240521\n\n' % currversion
+descplugx = 'RSS Reader by Rico Schulte v.%s\n\nModd.by @lululla 20240521\n\n' % __version__
 HALIGN = RT_HALIGN_LEFT
 ssl._create_default_https_context = ssl._create_unverified_context
 installer_url = 'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0JlbGZhZ29yMjAwNS9SU1NSZWFkZXIvbWFpbi9pbnN0YWxsZXIuc2g='
@@ -74,7 +73,7 @@ def Plugins(**kwargs):
         PluginDescriptor(
             name=myname,
             description='RSS Simple Reader v.%s' %
-            currversion,
+            __version__,
             icon='rss.png',
             where=PluginDescriptor.WHERE_PLUGINMENU,
             fnc=main),
@@ -192,8 +191,8 @@ class RSSFeedScreenList(Screen):
                     break
         self.new_version = remote_version
         self.new_changelog = remote_changelog
-        if float(currversion) < float(remote_version):
-            # if currversion < remote_version:
+        if float(__version__) < float(remote_version):
+            # if __version__ < remote_version:
             self.Update = True
             # self['key_yellow'].show()
             # self['key_green'].show()
