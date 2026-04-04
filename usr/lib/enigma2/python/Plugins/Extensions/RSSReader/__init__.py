@@ -10,6 +10,7 @@ PluginLanguageDomain = 'RSSReader'
 PluginLanguagePath = 'Extensions/RSSReader/locale'
 __version__ = "1.13"
 
+
 def paypal():
     conthelp = "If you like what I do you\n"
     conthelp += "can contribute with a coffee\n"
