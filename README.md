@@ -43,10 +43,11 @@ Get the latest APK from [**Releases**](https://github.com/Belfagor2005/RSSReader
 
 ## 📱 Screenshots
 
-| Feed List | Article List | Article Detail |
-|-----------|--------------|----------------|
-| ![Feeds](https://placehold.co/300x600/FF7A00/FFFFFF?text=Feed+List) | ![Articles](https://placehold.co/300x600/1E1E2E/FFFFFF?text=Article+List) | ![Detail](https://placehold.co/300x600/FFC000/000000?text=Detail) |
-
+<p align="center">
+  <img src="Screen/home.png" width="200" alt="Home" onerror="this.style.display='none'"/>
+  <img src="Screen/feeds.png" width="200" alt="Feeds" onerror="this.style.display='none'"/>
+  <img src="Screen/details.png" width="200" alt="Details" onerror="this.style.display='none'"/>
+</p>
 ---
 
 ## 📋 Requirements
