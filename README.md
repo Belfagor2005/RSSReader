@@ -6,7 +6,18 @@
 [![Version](https://img.shields.io/badge/Version-1.0-blue.svg)](https://github.com/Belfagor2005/RSSReader/releases)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+<p align="center">
+  <a href="https://ko-fi.com/lululla">
+    <img src="https://img.shields.io/badge/_-Donate-red.svg?logo=githubsponsors&labelColor=555555&style=for-the-badge" alt="Donate via Ko-fi">
+  </a>
+  <a href="https://paypal.me/belfagor2005">
+    <img src="https://img.shields.io/badge/_-Donate-green.svg?logo=githubsponsors&labelColor=555555&style=for-the-badge" alt="Donate via PayPal">
+  </a>
+</p>
+
 > Multi-feed RSS reader for Android, port of the original Enigma2 plugin by **Rico Schulte** (2006), maintained by **@lululla**.
+
+
 
 ---
 
