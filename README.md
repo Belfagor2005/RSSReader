@@ -47,6 +47,7 @@ Get the latest APK from [**Releases**](https://github.com/Belfagor2005/RSSReader
   <img src="Screen/home.png" width="200" alt="Home" onerror="this.style.display='none'"/>
   <img src="Screen/feeds.png" width="200" alt="Feeds" onerror="this.style.display='none'"/>
   <img src="Screen/details.png" width="200" alt="Details" onerror="this.style.display='none'"/>
+  <img src="Screen/info.png" width="200" alt="Info" onerror="this.style.display='none'"/>
 </p>
 ---
 
